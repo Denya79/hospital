@@ -1,0 +1,12 @@
+<odoo>
+
+    <record id="hh_doctor_1" model="hr.hospital.doctor">
+        <field name="name">Doctor 1</field>
+    </record>
+
+    <record id="hh_doctor_2" model="hr.hospital.doctor">
+        <field name="name">Doctor 2</field>
+    </record>
+
+
+</odoo>
