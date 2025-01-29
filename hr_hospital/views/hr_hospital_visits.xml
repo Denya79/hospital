@@ -6,9 +6,10 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="patientId"/>
-                <field name="doctorId"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
                 <field name="visit_date" widget="datetime"/>
+                <field name="status"/>
             </tree>
         </field>
     </record>
@@ -19,14 +20,38 @@
         <field name="model">hr.hospital.visits</field>
         <field name="arch" type="xml">
             <form>
-                <header></header>
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="btn-primary" modifiers="{'readonly': [('status', 'in', ['completed', 'canceled'])]}"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn-secondary" modifiers="{'readonly': [('status', '=', 'canceled')]}"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="patientId"/>
-                            <field name="doctorId"/>
-                            <field name="visit_date" widget="datetime"/>
+                            <field name="name" modifiers="{'readonly': [('status', '=', 'completed')]}"/>
+                            <field name="patient_id" modifiers="{'readonly': [('status', '=', 'completed')]}"/>
+                            <field name="doctor_id" modifiers="{'readonly': [('status', '=', 'completed')]}"/>
+                            <field name="visit_date" widget="datetime" modifiers="{'readonly': [('status', '=', 'completed')]}"/>
+                            <field name="status" widget="statusbar"/>
+                        </group>
+                        <group>
+                            <field name="scheduled_date" modifiers="{'readonly': [('status', '=', 'completed')]}"/>
+                            <field name="actual_date" modifiers="{'readonly': [('status', '=', 'completed')]}"/>
+                        </group>
+                        <group>
+                            <field name="diagnosis_ids">
+                                <tree>
+                                    <field name="disease"/>
+                                    <field name="description"/>
+                                    <field name="approved"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="disease"/>
+                                        <field name="description"/>
+                                        <field name="approved"/>
+                                    </group>
+                                </form>
+                            </field>
                         </group>
                     </group>
                 </sheet>

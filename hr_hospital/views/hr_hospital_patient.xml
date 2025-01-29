@@ -5,7 +5,16 @@
         <field name="model">hr.hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="phone"/>
+                <field name="personal_doctor"/>
+                <field name="birth_date"/>
+                <field name="age"/>
+                <field name="passport_data"/>
+                <field name="emergency_contact"/>
+                <field name="active"/>
+                <button name="action_open_change_doctor_wizard" type="object" string="Change doctor" class="btn-primary"/>
             </tree>
         </field>
 
@@ -20,7 +29,21 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="phone"/>
+                        </group>
+                        <group>
+                            <field name="photo"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="personal_doctor"/>
+                            <field name="birth_date"/>
+                            <field name="age" readonly="1"/>
+                            <field name="passport_data"/>
+                            <field name="emergency_contact"/>
+                            <field name="active"/>
                         </group>
                     </group>
                 </sheet>
@@ -33,7 +56,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hr.hospital.patient</field>
         <field name="view_mode">tree,form</field>
-</record>
+    </record>
 
     <menuitem id="hr_hospital_menu_patient" action="action_hr_hospital_patient_window" parent="hr_hospital_main_menu" name="Patient" sequence="400"/>
 

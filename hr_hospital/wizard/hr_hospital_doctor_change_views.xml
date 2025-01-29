@@ -1,0 +1,25 @@
+<odoo>
+    <record id="hr_hospital_change_doctor_form" model="ir.ui.view">
+        <field name="name">hr.hospital.change.doctor.form</field>
+        <field name="model">hr.hospital.change.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Change Doctor">
+                <group>
+                    <field name="doctor_id"/>
+                </group>
+                <footer>
+                    <button name="action_change_doctor" type="object" string="Change" class="btn-primary"/>
+                    <button type="object" sring="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_hospital_change_doctor" model="ir.actions.act_window">
+        <field name="name">Change Doctor</field>
+        <field name="res_model">hr.hospital.change.doctor</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'active_model': 'hr.hospital.patient'}</field>
+    </record>
+</odoo>

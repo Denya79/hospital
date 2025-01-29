@@ -5,7 +5,12 @@
         <field name="model">hr.hospital.doctor</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="phone"/>
+                <field name="gender"/>
+                <field name="specialty"/>
+                <field name="is_intern"/>
             </tree>
         </field>
     </record>
@@ -19,7 +24,19 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="phone"/>
+                        </group>
+                        <group>
+                            <field name="photo"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                            <field name="specialty"/>
+                            <field name="is_intern"/>
+                            <field name="mentor_id" modifiers="{'invisible': [('is_intern', '=', False)]}"/>
                         </group>
                     </group>
                 </sheet>

@@ -1,0 +1,36 @@
+<odoo>
+    <record id="hr_hospital_disease_infections" model="hr.hospital.disease.types">
+        <field name="name">Infections</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="hr_hospital_disease_bacterial_infections" model="hr.hospital.disease.types">
+        <field name="name">Bacterial infections</field>
+        <field name="active">True</field>
+        <field name="parent_id" ref="hr_hospital_disease_infetions"/>
+    </record>
+
+    <record id="hr_hospital_disease_respiratory" model="hr.hospital.disease.types">
+        <field name="name">Respiratory</field>
+        <field name="active">True</field>
+        <field name="parent_id" ref="hr_hospital_disease_infetions"/>
+    </record>
+
+    <record id="hr_hospital_disease_dysentery" model="hr.hospital.disease.types">
+        <field name="name">Dysentery</field>
+        <field name="active">True</field>
+        <field name="parent_id" ref="hr_hospital_disease_bacterial_infections"/>
+    </record>
+
+    <record id="hr_hospital_disease_flu" model="hr.hospital.disease.types">
+        <field name="name">Flu</field>
+        <field name="active">True</field>
+        <field name="parent_id" ref="hr_hospital_disease_respiratory"/>
+    </record>
+
+    <record id="hr_hospital_disease_measles" model="hr.hospital.disease.types">
+        <field name="name">Measles</field>
+        <field name="active">True</field>
+        <field name="parent_id" ref="hr_hospital_disease_respiratory"/>
+    </record>
+</odoo>

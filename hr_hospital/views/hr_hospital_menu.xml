@@ -7,6 +7,17 @@
               parent="hr_hospital_catalog_main_menu"
               name="hospital" sequence="200"/>
 
+    <menuitem id="hr_hospital_reports_menu"
+              name="Reports"
+              parent="hr_hospital_main_menu"
+              sequence="300"/>
+
+    <menuitem id="menu_monthly_disease_report"
+              name="Monthly Disease Report"
+              parent="hr_hospital_reports_menu"
+              action="action_wizard_monthly_disease_report"
+              sequence="400"/>
+
 
 
 
