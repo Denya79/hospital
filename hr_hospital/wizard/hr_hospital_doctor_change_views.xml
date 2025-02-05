@@ -9,7 +9,7 @@
                 </group>
                 <footer>
                     <button name="action_change_doctor" type="object" string="Change" class="btn-primary"/>
-                    <button type="object" sring="Cancel" class="btn-secondary" special="cancel"/>
+                    <button type="object" string="Cancel" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
         </field>

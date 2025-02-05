@@ -23,7 +23,7 @@ class HHDoctor(models.Model):
     ], string='Speciality')
 
     is_intern = fields.Boolean(string='Intern')
-    mentor_id = fields.Many2one('hr.hospital.doctor', sring='Mentor')
+    mentor_id = fields.Many2one('hr.hospital.doctor', string='Mentor')
 
     @api.onchange('is_intern')
     def _onchange_is_intern(self):
